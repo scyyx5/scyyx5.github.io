@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>visualization.visualizeDefaultRate API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>visualization.visualizeDefaultRate</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import csv
+import sys
+sys.path.insert(1, &#39;../../visualization/&#39;)
+from adjustSlope import adjust_slope
+
+import plotly.express as p
+import plotly.offline as py
+# py.init_notebook_mode(connected=True)
+import plotly.graph_objs as go
+import plotly.figure_factory as ff    
+
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+
+def default_cohort(data,isDark = False,colorVision = &#34;None&#34;,language = &#34;English&#34;):
+    &#34;&#34;&#34;
+    visualize default rate and cohort.
+    parameter:
+    - data (pandas DataFrame): The input data for Age-Period-Cohort analysis.
+    - isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+    - colorVision (str): mode of color vision dificiency. possible choice: &#34;redGreen&#34;, &#34;blueYellow&#34;,&#34;full&#34;. (default is &#34;full&#34;)
+    - language (str): Language user choose. (default is &#34;English&#34;)
+    &#34;&#34;&#34;
+    current_month = 20
+    #pre processing
+    data[&#39;cal&#39;] = data[&#39;t&#39;] + data[&#39;v&#39;]
+    grouped_cal = data.groupby(&#39;cal&#39;)[[&#39;cal&#39;,&#39;y&#39;,&#39;pd&#39;]]
+    pct_cal = grouped_cal.agg({&#39;cal&#39; : &#39;count&#39;,&#39;y&#39;:&#39;sum&#39;,&#39;pd&#39;:&#39;sum&#39;})
+
+
+    data[&#39;cal&#39;] = data[&#39;t&#39;] + data[&#39;v&#39;]
+    pct_cal = data.groupby([&#39;cal&#39;]).agg(number = (&#39;cal&#39;,&#39;count&#39;),
+                                        dr=(&#39;y&#39;,&#39;sum&#39;),edr=(&#39;pd&#39;,&#39;sum&#39;))
+    
+
+    pct_cal[&#34;dr&#34;] = pct_cal[&#34;dr&#34;]/pct_cal[&#34;number&#34;]
+    pct_cal[&#34;edr&#34;] = pct_cal[&#34;edr&#34;]/pct_cal[&#39;number&#39;]
+
+    xTitle = &#34;calendar time&#34;
+    if (language == &#34;Chinese&#34;):
+        xTitle = &#34;日期&#34;
+    
+
+    x_range = [pct_cal.index.min(),pct_cal.index.max()]
+    y_range = [pct_cal[&#34;dr&#34;].append(pct_cal[&#34;edr&#34;]).min(),
+               pct_cal[&#34;dr&#34;].append(pct_cal[&#34;edr&#34;]).max()]
+    visualize_data(&#34;dr_cal&#34;,pct_cal.index[0:current_month],pct_cal[&#34;dr&#34;][0:current_month],
+                  pct_cal[&#34;edr&#34;][0:current_month],x_range,y_range,
+                  xTitle,isDark,colorVision,language=language)
+    visualize_data(&#34;dr_cal_predicted&#34;,pct_cal.index,pct_cal[&#34;dr&#34;],
+                  pct_cal[&#34;edr&#34;],x_range,y_range,xTitle,isDark,colorVision,language=language)
+    
+    # apply sinh scale
+    pct_cal[&#34;sinhdr&#34;] = pct_cal[&#34;dr&#34;].apply(np.sinh)
+    pct_cal[&#34;sinhedr&#34;] = pct_cal[&#34;edr&#34;].apply(np.sinh)
+    sinh_y_range = [pct_cal[&#34;sinhdr&#34;].append(pct_cal[&#34;sinhedr&#34;]).min(),
+               pct_cal[&#34;sinhdr&#34;].append(pct_cal[&#34;sinhedr&#34;]).max()]
+    visualize_data(&#34;sinh_dr_cal&#34;,pct_cal.index[0:current_month],pct_cal[&#34;sinhdr&#34;][0:current_month],
+                  pct_cal[&#34;sinhedr&#34;][0:current_month],x_range,sinh_y_range,
+                  xTitle,isDark,colorVision,&#34;sinh &#34;,language=language)
+    visualize_data(&#34;sinh_dr_cal_predicted&#34;,pct_cal.index,pct_cal[&#34;sinhdr&#34;],
+                  pct_cal[&#34;sinhedr&#34;],x_range,sinh_y_range,xTitle,
+                  isDark,colorVision,&#34;sinh &#34;,language=language)
+    
+    # apply exp scale
+    pct_cal[&#34;expdr&#34;] = pct_cal[&#34;dr&#34;].apply(np.exp)
+    pct_cal[&#34;expedr&#34;] = pct_cal[&#34;edr&#34;].apply(np.exp)
+    exp_y_range = [pct_cal[&#34;expdr&#34;].append(pct_cal[&#34;expedr&#34;]).min(),
+               pct_cal[&#34;expdr&#34;].append(pct_cal[&#34;expedr&#34;]).max()]
+    visualize_data(&#34;exp_dr_cal&#34;,pct_cal.index[0:current_month],pct_cal[&#34;expdr&#34;][0:current_month],
+                  pct_cal[&#34;expedr&#34;][0:current_month],x_range,exp_y_range,
+                  xTitle,isDark,colorVision,&#34;exp &#34;,language=language)
+    visualize_data(&#34;exp_dr_cal_predicted&#34;,pct_cal.index,pct_cal[&#34;expdr&#34;],
+                  pct_cal[&#34;expedr&#34;],x_range,exp_y_range,xTitle,
+                  isDark,colorVision,&#34;exp &#34;,language=language)
+    
+
+def default_age(data,isDark = False,colorVision =&#34;None&#34;,language = &#34;English&#34;):
+    &#34;&#34;&#34;
+    visualize default rate and age.
+    parameter:
+    - data (pandas DataFrame): The input data for Age-Period-Cohort analysis.
+    - isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+    - colorVision (str): mode of color vision dificiency. possible choice: &#34;redGreen&#34;, &#34;blueYellow&#34;,&#34;full&#34;. (default is &#34;full&#34;)
+    - language (str): Language user choose. (default is &#34;English&#34;)
+    &#34;&#34;&#34;
+    current_age = 10 
+    # pre processing
+    pct_age = data.groupby([&#39;t&#39;]).agg(number = (&#39;t&#39;,&#39;count&#39;),
+                                      dr=(&#39;y&#39;,&#39;sum&#39;),edr=(&#39;pd&#39;,&#39;sum&#39;),std = (&#39;pd&#39;,&#39;std&#39;))
+    pct_age[&#34;dr&#34;] = pct_age[&#34;dr&#34;]/pct_age[&#34;number&#34;]
+    pct_age[&#34;edr&#34;] = pct_age[&#34;edr&#34;]/pct_age[&#34;number&#34;]
+
+    xTitle = &#34;age(month)&#34;
+    if (language == &#34;Chinese&#34;):
+        xTitle = &#34;年龄（月）&#34;
+    
+    x_range = [pct_age.index.min(),pct_age.index.max()]
+    y_range = [pct_age[&#34;dr&#34;].append(pct_age[&#34;edr&#34;]).min(),
+               pct_age[&#34;dr&#34;].append(pct_age[&#34;edr&#34;]).max()]
+    visualize_data(&#34;dr_age&#34;,pct_age.index[0:current_age],pct_age[&#34;dr&#34;][0:current_age],
+                  pct_age[&#34;edr&#34;][0:current_age],x_range,y_range,xTitle,isDark,colorVision,language=language)
+    visualize_data(&#34;dr_age_predicted&#34;,pct_age.index,pct_age[&#34;dr&#34;],
+                  pct_age[&#34;edr&#34;],x_range,y_range,xTitle,isDark,colorVision,language=language)
+    
+    
+    
+    # apply sinh scale
+    pct_age[&#34;sinhdr&#34;] = pct_age[&#34;dr&#34;].apply(np.sinh)
+    pct_age[&#34;sinhedr&#34;] = pct_age[&#34;edr&#34;].apply(np.sinh)
+    sinh_y_range = [pct_age[&#34;sinhdr&#34;].append(pct_age[&#34;sinhedr&#34;]).min(),
+               pct_age[&#34;sinhdr&#34;].append(pct_age[&#34;sinhedr&#34;]).max()]
+    visualize_data(&#34;sinh_dr_age&#34;,pct_age.index[0:current_age],pct_age[&#34;sinhdr&#34;][0:current_age],
+                  pct_age[&#34;sinhedr&#34;][0:current_age],x_range,sinh_y_range,xTitle,isDark,colorVision, &#34;sinh &#34;,language=language)
+    visualize_data(&#34;sinh_dr_age_predicted&#34;,pct_age.index,pct_age[&#34;sinhdr&#34;],
+                  pct_age[&#34;sinhedr&#34;],x_range,sinh_y_range,xTitle,isDark,colorVision, &#34;sinh &#34;,language=language)
+    
+    # apply exp scale
+    pct_age[&#34;expdr&#34;] = pct_age[&#34;dr&#34;].apply(np.exp)
+    pct_age[&#34;expedr&#34;] = pct_age[&#34;edr&#34;].apply(np.exp)
+    exp_y_range = [pct_age[&#34;expdr&#34;].append(pct_age[&#34;expedr&#34;]).min(),
+               pct_age[&#34;expdr&#34;].append(pct_age[&#34;expedr&#34;]).max()]
+    visualize_data(&#34;exp_dr_age&#34;,pct_age.index[0:current_age],pct_age[&#34;expdr&#34;][0:current_age],
+                  pct_age[&#34;expedr&#34;][0:current_age],x_range,exp_y_range,xTitle,isDark,colorVision,&#34;exp &#34;,language=language)
+    visualize_data(&#34;exp_dr_age_predicted&#34;,pct_age.index,pct_age[&#34;expdr&#34;],
+                  pct_age[&#34;expedr&#34;],x_range,exp_y_range,xTitle,isDark,colorVision,&#34;exp &#34;,language=language)
+    
+
+    
+
+
+def visualize_data(filename,x,realy,predictedy,xrange,yrange,xTitle,isDark = False,colorVision = &#34;None&#34;,prefix = &#34;&#34;,language = &#34;English&#34;):
+    &#34;&#34;&#34;
+    visualize default rate according to given information
+    parameter:
+    - filename (str): a string indicating the name of the graph.
+    - x (list): list of x values
+    - realy (list): real value of y
+    - predictedy (list): list of predicted y values
+    - xrange (list): range of x values
+    - yrange (list): range of y values
+    - xTitle (str): title of x axis
+    - isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+    - colorVision (str): mode of color vision dificiency. possible choice: &#34;redGreen&#34;, &#34;blueYellow&#34;,&#34;full&#34;. (default is &#34;full&#34;)
+    - prefix (str): prefix of file name. (default is &#34;&#34;)
+    - language (str): Language user choose. (default is &#34;English&#34;)
+    &#34;&#34;&#34;
+    if(language == &#34;Chinese&#34;):
+        yTitile = prefix + &#34;违约率(%)&#34;
+        trace0_name = &#34;违约率&#34;
+        trace1_name = &#34;期望违约率&#34;
+    else:
+        yTitile = prefix + &#34;default rate(%)&#34;
+        trace0_name = &#34;default rate&#34;
+        trace1_name = &#34;expected default rate&#34;
+
+    layout = go.Layout(
+        paper_bgcolor=&#39;rgb(233,233,233)&#39;,
+        title=
+        {
+            &#39;y&#39;:0.9,
+            &#39;x&#39;:0.45,
+            &#39;xanchor&#39;: &#39;center&#39;,
+            &#39;yanchor&#39;: &#39;top&#39;
+        },
+        xaxis=dict(
+            title=xTitle,
+            range=xrange
+        ),
+        yaxis=dict(
+            title= yTitile,
+            range=yrange
+        ),
+        font=dict(
+            size=20
+        ),
+        legend=dict(
+            orientation=&#34;h&#34;,
+            yanchor=&#34;bottom&#34;,
+            y=1.02,
+            xanchor=&#34;right&#34;,
+            x=1
+        )
+    )
+    
+    trace0 = go.Scatter(
+        x = x,
+        # y = [ i + float(error) for i in pct_age[&#34;dr&#34;][0:current_age]] ,
+        y = realy,
+        mode = &#39;lines&#39;,
+        name = trace0_name
+    )
+    
+
+    trace1 = go.Scatter(
+        x = x,
+        # y = [ i + float(error) for i in pct_age[&#34;edr&#34;][0:current_age]],
+        y = predictedy,
+        mode = &#39;lines&#39;,
+        name = trace1_name
+    )
+
+    if(colorVision == &#34;redGreen&#34;):
+        trace0.update(marker_color = &#34;green&#34;)
+    elif(colorVision ==&#34;blueYellow&#34;):
+        trace1.update(marker_color = &#34;green&#34;)
+    
+
+    figure = go.Figure({&#39;data&#39;: [trace1,trace0],&#39;layout&#39;: layout})
+
+    figure.update_yaxes(exponentformat= &#34;power&#34;)
+
+    if(colorVision == &#34;full&#34;):
+        figure.update_traces(marker_color=&#34;grey&#34;)
+
+    # figure.show()
+    # save image
+    if(isDark):
+        figure.update_layout(
+            plot_bgcolor=&#39;rgb(63, 71, 79)&#39;,
+            paper_bgcolor =&#39;rgb(63, 71, 79)&#39;,
+            font_color=&#34;white&#34;)
+
+    py.plot(figure,filename = &#39;../../../res/&#39; + filename + &#39;.html&#39;,auto_open = False)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="visualization.visualizeDefaultRate.default_age"><code class="name flex">
+<span>def <span class="ident">default_age</span></span>(<span>data, isDark=False, colorVision='None', language='English')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>visualize default rate and age.
+parameter:
+- data (pandas DataFrame): The input data for Age-Period-Cohort analysis.
+- isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+- colorVision (str): mode of color vision dificiency. possible choice: "redGreen", "blueYellow","full". (default is "full")
+- language (str): Language user choose. (default is "English")</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def default_age(data,isDark = False,colorVision =&#34;None&#34;,language = &#34;English&#34;):
+    &#34;&#34;&#34;
+    visualize default rate and age.
+    parameter:
+    - data (pandas DataFrame): The input data for Age-Period-Cohort analysis.
+    - isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+    - colorVision (str): mode of color vision dificiency. possible choice: &#34;redGreen&#34;, &#34;blueYellow&#34;,&#34;full&#34;. (default is &#34;full&#34;)
+    - language (str): Language user choose. (default is &#34;English&#34;)
+    &#34;&#34;&#34;
+    current_age = 10 
+    # pre processing
+    pct_age = data.groupby([&#39;t&#39;]).agg(number = (&#39;t&#39;,&#39;count&#39;),
+                                      dr=(&#39;y&#39;,&#39;sum&#39;),edr=(&#39;pd&#39;,&#39;sum&#39;),std = (&#39;pd&#39;,&#39;std&#39;))
+    pct_age[&#34;dr&#34;] = pct_age[&#34;dr&#34;]/pct_age[&#34;number&#34;]
+    pct_age[&#34;edr&#34;] = pct_age[&#34;edr&#34;]/pct_age[&#34;number&#34;]
+
+    xTitle = &#34;age(month)&#34;
+    if (language == &#34;Chinese&#34;):
+        xTitle = &#34;年龄（月）&#34;
+    
+    x_range = [pct_age.index.min(),pct_age.index.max()]
+    y_range = [pct_age[&#34;dr&#34;].append(pct_age[&#34;edr&#34;]).min(),
+               pct_age[&#34;dr&#34;].append(pct_age[&#34;edr&#34;]).max()]
+    visualize_data(&#34;dr_age&#34;,pct_age.index[0:current_age],pct_age[&#34;dr&#34;][0:current_age],
+                  pct_age[&#34;edr&#34;][0:current_age],x_range,y_range,xTitle,isDark,colorVision,language=language)
+    visualize_data(&#34;dr_age_predicted&#34;,pct_age.index,pct_age[&#34;dr&#34;],
+                  pct_age[&#34;edr&#34;],x_range,y_range,xTitle,isDark,colorVision,language=language)
+    
+    
+    
+    # apply sinh scale
+    pct_age[&#34;sinhdr&#34;] = pct_age[&#34;dr&#34;].apply(np.sinh)
+    pct_age[&#34;sinhedr&#34;] = pct_age[&#34;edr&#34;].apply(np.sinh)
+    sinh_y_range = [pct_age[&#34;sinhdr&#34;].append(pct_age[&#34;sinhedr&#34;]).min(),
+               pct_age[&#34;sinhdr&#34;].append(pct_age[&#34;sinhedr&#34;]).max()]
+    visualize_data(&#34;sinh_dr_age&#34;,pct_age.index[0:current_age],pct_age[&#34;sinhdr&#34;][0:current_age],
+                  pct_age[&#34;sinhedr&#34;][0:current_age],x_range,sinh_y_range,xTitle,isDark,colorVision, &#34;sinh &#34;,language=language)
+    visualize_data(&#34;sinh_dr_age_predicted&#34;,pct_age.index,pct_age[&#34;sinhdr&#34;],
+                  pct_age[&#34;sinhedr&#34;],x_range,sinh_y_range,xTitle,isDark,colorVision, &#34;sinh &#34;,language=language)
+    
+    # apply exp scale
+    pct_age[&#34;expdr&#34;] = pct_age[&#34;dr&#34;].apply(np.exp)
+    pct_age[&#34;expedr&#34;] = pct_age[&#34;edr&#34;].apply(np.exp)
+    exp_y_range = [pct_age[&#34;expdr&#34;].append(pct_age[&#34;expedr&#34;]).min(),
+               pct_age[&#34;expdr&#34;].append(pct_age[&#34;expedr&#34;]).max()]
+    visualize_data(&#34;exp_dr_age&#34;,pct_age.index[0:current_age],pct_age[&#34;expdr&#34;][0:current_age],
+                  pct_age[&#34;expedr&#34;][0:current_age],x_range,exp_y_range,xTitle,isDark,colorVision,&#34;exp &#34;,language=language)
+    visualize_data(&#34;exp_dr_age_predicted&#34;,pct_age.index,pct_age[&#34;expdr&#34;],
+                  pct_age[&#34;expedr&#34;],x_range,exp_y_range,xTitle,isDark,colorVision,&#34;exp &#34;,language=language)</code></pre>
+</details>
+</dd>
+<dt id="visualization.visualizeDefaultRate.default_cohort"><code class="name flex">
+<span>def <span class="ident">default_cohort</span></span>(<span>data, isDark=False, colorVision='None', language='English')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>visualize default rate and cohort.
+parameter:
+- data (pandas DataFrame): The input data for Age-Period-Cohort analysis.
+- isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+- colorVision (str): mode of color vision dificiency. possible choice: "redGreen", "blueYellow","full". (default is "full")
+- language (str): Language user choose. (default is "English")</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def default_cohort(data,isDark = False,colorVision = &#34;None&#34;,language = &#34;English&#34;):
+    &#34;&#34;&#34;
+    visualize default rate and cohort.
+    parameter:
+    - data (pandas DataFrame): The input data for Age-Period-Cohort analysis.
+    - isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+    - colorVision (str): mode of color vision dificiency. possible choice: &#34;redGreen&#34;, &#34;blueYellow&#34;,&#34;full&#34;. (default is &#34;full&#34;)
+    - language (str): Language user choose. (default is &#34;English&#34;)
+    &#34;&#34;&#34;
+    current_month = 20
+    #pre processing
+    data[&#39;cal&#39;] = data[&#39;t&#39;] + data[&#39;v&#39;]
+    grouped_cal = data.groupby(&#39;cal&#39;)[[&#39;cal&#39;,&#39;y&#39;,&#39;pd&#39;]]
+    pct_cal = grouped_cal.agg({&#39;cal&#39; : &#39;count&#39;,&#39;y&#39;:&#39;sum&#39;,&#39;pd&#39;:&#39;sum&#39;})
+
+
+    data[&#39;cal&#39;] = data[&#39;t&#39;] + data[&#39;v&#39;]
+    pct_cal = data.groupby([&#39;cal&#39;]).agg(number = (&#39;cal&#39;,&#39;count&#39;),
+                                        dr=(&#39;y&#39;,&#39;sum&#39;),edr=(&#39;pd&#39;,&#39;sum&#39;))
+    
+
+    pct_cal[&#34;dr&#34;] = pct_cal[&#34;dr&#34;]/pct_cal[&#34;number&#34;]
+    pct_cal[&#34;edr&#34;] = pct_cal[&#34;edr&#34;]/pct_cal[&#39;number&#39;]
+
+    xTitle = &#34;calendar time&#34;
+    if (language == &#34;Chinese&#34;):
+        xTitle = &#34;日期&#34;
+    
+
+    x_range = [pct_cal.index.min(),pct_cal.index.max()]
+    y_range = [pct_cal[&#34;dr&#34;].append(pct_cal[&#34;edr&#34;]).min(),
+               pct_cal[&#34;dr&#34;].append(pct_cal[&#34;edr&#34;]).max()]
+    visualize_data(&#34;dr_cal&#34;,pct_cal.index[0:current_month],pct_cal[&#34;dr&#34;][0:current_month],
+                  pct_cal[&#34;edr&#34;][0:current_month],x_range,y_range,
+                  xTitle,isDark,colorVision,language=language)
+    visualize_data(&#34;dr_cal_predicted&#34;,pct_cal.index,pct_cal[&#34;dr&#34;],
+                  pct_cal[&#34;edr&#34;],x_range,y_range,xTitle,isDark,colorVision,language=language)
+    
+    # apply sinh scale
+    pct_cal[&#34;sinhdr&#34;] = pct_cal[&#34;dr&#34;].apply(np.sinh)
+    pct_cal[&#34;sinhedr&#34;] = pct_cal[&#34;edr&#34;].apply(np.sinh)
+    sinh_y_range = [pct_cal[&#34;sinhdr&#34;].append(pct_cal[&#34;sinhedr&#34;]).min(),
+               pct_cal[&#34;sinhdr&#34;].append(pct_cal[&#34;sinhedr&#34;]).max()]
+    visualize_data(&#34;sinh_dr_cal&#34;,pct_cal.index[0:current_month],pct_cal[&#34;sinhdr&#34;][0:current_month],
+                  pct_cal[&#34;sinhedr&#34;][0:current_month],x_range,sinh_y_range,
+                  xTitle,isDark,colorVision,&#34;sinh &#34;,language=language)
+    visualize_data(&#34;sinh_dr_cal_predicted&#34;,pct_cal.index,pct_cal[&#34;sinhdr&#34;],
+                  pct_cal[&#34;sinhedr&#34;],x_range,sinh_y_range,xTitle,
+                  isDark,colorVision,&#34;sinh &#34;,language=language)
+    
+    # apply exp scale
+    pct_cal[&#34;expdr&#34;] = pct_cal[&#34;dr&#34;].apply(np.exp)
+    pct_cal[&#34;expedr&#34;] = pct_cal[&#34;edr&#34;].apply(np.exp)
+    exp_y_range = [pct_cal[&#34;expdr&#34;].append(pct_cal[&#34;expedr&#34;]).min(),
+               pct_cal[&#34;expdr&#34;].append(pct_cal[&#34;expedr&#34;]).max()]
+    visualize_data(&#34;exp_dr_cal&#34;,pct_cal.index[0:current_month],pct_cal[&#34;expdr&#34;][0:current_month],
+                  pct_cal[&#34;expedr&#34;][0:current_month],x_range,exp_y_range,
+                  xTitle,isDark,colorVision,&#34;exp &#34;,language=language)
+    visualize_data(&#34;exp_dr_cal_predicted&#34;,pct_cal.index,pct_cal[&#34;expdr&#34;],
+                  pct_cal[&#34;expedr&#34;],x_range,exp_y_range,xTitle,
+                  isDark,colorVision,&#34;exp &#34;,language=language)</code></pre>
+</details>
+</dd>
+<dt id="visualization.visualizeDefaultRate.visualize_data"><code class="name flex">
+<span>def <span class="ident">visualize_data</span></span>(<span>filename, x, realy, predictedy, xrange, yrange, xTitle, isDark=False, colorVision='None', prefix='', language='English')</span>
+</code></dt>
+<dd>
+<div class="desc"><p>visualize default rate according to given information
+parameter:
+- filename (str): a string indicating the name of the graph.
+- x (list): list of x values
+- realy (list): real value of y
+- predictedy (list): list of predicted y values
+- xrange (list): range of x values
+- yrange (list): range of y values
+- xTitle (str): title of x axis
+- isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+- colorVision (str): mode of color vision dificiency. possible choice: "redGreen", "blueYellow","full". (default is "full")
+- prefix (str): prefix of file name. (default is "")
+- language (str): Language user choose. (default is "English")</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def visualize_data(filename,x,realy,predictedy,xrange,yrange,xTitle,isDark = False,colorVision = &#34;None&#34;,prefix = &#34;&#34;,language = &#34;English&#34;):
+    &#34;&#34;&#34;
+    visualize default rate according to given information
+    parameter:
+    - filename (str): a string indicating the name of the graph.
+    - x (list): list of x values
+    - realy (list): real value of y
+    - predictedy (list): list of predicted y values
+    - xrange (list): range of x values
+    - yrange (list): range of y values
+    - xTitle (str): title of x axis
+    - isDark (bool): If True, use colorblind-friendly colors in the visualizations. (Default is False)
+    - colorVision (str): mode of color vision dificiency. possible choice: &#34;redGreen&#34;, &#34;blueYellow&#34;,&#34;full&#34;. (default is &#34;full&#34;)
+    - prefix (str): prefix of file name. (default is &#34;&#34;)
+    - language (str): Language user choose. (default is &#34;English&#34;)
+    &#34;&#34;&#34;
+    if(language == &#34;Chinese&#34;):
+        yTitile = prefix + &#34;违约率(%)&#34;
+        trace0_name = &#34;违约率&#34;
+        trace1_name = &#34;期望违约率&#34;
+    else:
+        yTitile = prefix + &#34;default rate(%)&#34;
+        trace0_name = &#34;default rate&#34;
+        trace1_name = &#34;expected default rate&#34;
+
+    layout = go.Layout(
+        paper_bgcolor=&#39;rgb(233,233,233)&#39;,
+        title=
+        {
+            &#39;y&#39;:0.9,
+            &#39;x&#39;:0.45,
+            &#39;xanchor&#39;: &#39;center&#39;,
+            &#39;yanchor&#39;: &#39;top&#39;
+        },
+        xaxis=dict(
+            title=xTitle,
+            range=xrange
+        ),
+        yaxis=dict(
+            title= yTitile,
+            range=yrange
+        ),
+        font=dict(
+            size=20
+        ),
+        legend=dict(
+            orientation=&#34;h&#34;,
+            yanchor=&#34;bottom&#34;,
+            y=1.02,
+            xanchor=&#34;right&#34;,
+            x=1
+        )
+    )
+    
+    trace0 = go.Scatter(
+        x = x,
+        # y = [ i + float(error) for i in pct_age[&#34;dr&#34;][0:current_age]] ,
+        y = realy,
+        mode = &#39;lines&#39;,
+        name = trace0_name
+    )
+    
+
+    trace1 = go.Scatter(
+        x = x,
+        # y = [ i + float(error) for i in pct_age[&#34;edr&#34;][0:current_age]],
+        y = predictedy,
+        mode = &#39;lines&#39;,
+        name = trace1_name
+    )
+
+    if(colorVision == &#34;redGreen&#34;):
+        trace0.update(marker_color = &#34;green&#34;)
+    elif(colorVision ==&#34;blueYellow&#34;):
+        trace1.update(marker_color = &#34;green&#34;)
+    
+
+    figure = go.Figure({&#39;data&#39;: [trace1,trace0],&#39;layout&#39;: layout})
+
+    figure.update_yaxes(exponentformat= &#34;power&#34;)
+
+    if(colorVision == &#34;full&#34;):
+        figure.update_traces(marker_color=&#34;grey&#34;)
+
+    # figure.show()
+    # save image
+    if(isDark):
+        figure.update_layout(
+            plot_bgcolor=&#39;rgb(63, 71, 79)&#39;,
+            paper_bgcolor =&#39;rgb(63, 71, 79)&#39;,
+            font_color=&#34;white&#34;)
+
+    py.plot(figure,filename = &#39;../../../res/&#39; + filename + &#39;.html&#39;,auto_open = False)</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="visualization" href="index.html">visualization</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="visualization.visualizeDefaultRate.default_age" href="#visualization.visualizeDefaultRate.default_age">default_age</a></code></li>
+<li><code><a title="visualization.visualizeDefaultRate.default_cohort" href="#visualization.visualizeDefaultRate.default_cohort">default_cohort</a></code></li>
+<li><code><a title="visualization.visualizeDefaultRate.visualize_data" href="#visualization.visualizeDefaultRate.visualize_data">visualize_data</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
